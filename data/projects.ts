@@ -1,0 +1,41 @@
+import { LucideIcon } from 'lucide-react';
+
+export interface Project {
+  id: number;
+  category: string;
+  title: string;
+  icon: string;
+  iconComponent?: LucideIcon;
+  image?: string;
+  tall?: boolean;
+  url: string;
+  description?: string;
+}
+
+import { Store, Rocket } from 'lucide-react';
+
+export const projects: Project[] = [
+  {
+    id: 1,
+    category: "E-Commerce · Retail",
+    title: "Lumiere Botanicals — E-Commerce Platform",
+    icon: "Store",
+    iconComponent: Store,
+    image: "/projects/hero1.png",
+    tall: true,
+    url: "https://lumiere-botanicals.pxxl.click/",
+    description: "A complete e-commerce solution with cart, checkout, and inventory management"
+  },
+  // Add more projects here as they become available
+  // {
+  //   id: 2,
+  //   category: "Your Category",
+  //   title: "Your Project Title",
+  //   icon: "Rocket",
+  //   iconComponent: Rocket, // Import from lucide-react
+  //   image: "/projects/your-screenshot.png", // Add screenshot to public/projects/
+  //   tall: false,
+  //   url: "https://your-project-url.com",
+  //   description: "Project description"
+  // },
+];

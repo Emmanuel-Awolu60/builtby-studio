@@ -3,17 +3,18 @@
 import { useState } from "react";
 import { useReveal } from "@/hooks/useReveal";
 import styles from "./Contact.module.css";
+import { Mail, Phone, Globe, Clock, CheckCircle } from "lucide-react";
 
 const contactDetails = [
-  { icon: "✉️", label: "Email Us", value: "hello@builtbystudio.com" },
-  { icon: "📞", label: "Call Us", value: "+234 901 435 4484" },
+  { icon: Mail, label: "Email Us", value: "hello@builtbystudio.com" },
+  { icon: Phone, label: "Call Us", value: "+234 901 435 4484" },
   {
-    icon: "🌍",
+    icon: Globe,
     label: "Working With Clients",
     value: "Worldwide — Remote-First Agency",
   },
   {
-    icon: "🕐",
+    icon: Clock,
     label: "Response Time",
     value: "Within 24 hours, Monday – Friday",
   },
@@ -72,21 +73,24 @@ export default function Contact() {
             Tell us about your project and we&apos;ll get back to you within 24
             hours with ideas, timeline, and next steps. No commitment required.
           </p>
-          {contactDetails.map((d) => (
-            <div key={d.label} className={styles.detail}>
-              <div className={styles.detailIcon}>{d.icon}</div>
-              <div>
-                <strong>{d.label}</strong>
-                <span>{d.value}</span>
+          {contactDetails.map((d) => {
+            const Icon = d.icon;
+            return (
+              <div key={d.label} className={styles.detail}>
+                <Icon className={styles.detailIcon} size={24} strokeWidth={1.5} />
+                <div>
+                  <strong>{d.label}</strong>
+                  <span>{d.value}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         <div className={`${styles.formWrap} reveal`} ref={formRef}>
           {submitted ? (
             <div className={styles.success}>
-              <span>✅</span>
+              <CheckCircle className={styles.successIcon} size={48} strokeWidth={1.5} />
               <h3>Message Sent!</h3>
               <p>
                 Thanks for reaching out. We&apos;ll get back to you within 24

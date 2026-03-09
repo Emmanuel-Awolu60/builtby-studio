@@ -2,25 +2,26 @@
 
 import { useReveal } from '@/hooks/useReveal';
 import styles from './About.module.css';
+import { Zap, Handshake, Target, Telescope } from 'lucide-react';
 
 const values = [
   {
-    icon: '⚡',
+    icon: Zap,
     title: 'Quality-First',
     desc: 'Every pixel, every line of code crafted with precision.',
   },
   {
-    icon: '🤝',
+    icon: Handshake,
     title: 'True Partnership',
     desc: "Your success is our success. We work with you, not for you.",
   },
   {
-    icon: '🎯',
+    icon: Target,
     title: 'Impact-Driven',
     desc: 'Simplicity with purpose — every element earns its place.',
   },
   {
-    icon: '🔭',
+    icon: Telescope,
     title: 'Future-Ready',
     desc: 'Modern tech, scalable builds, ready to grow with you.',
   },
@@ -55,13 +56,16 @@ export default function About() {
         </div>
 
         <div className={styles.values}>
-          {values.map((v) => (
-            <div key={v.title} className={styles.valueItem}>
-              <div className={styles.valueIcon}>{v.icon}</div>
-              <div className={styles.valueTitle}>{v.title}</div>
-              <div className={styles.valueDesc}>{v.desc}</div>
-            </div>
-          ))}
+          {values.map((v) => {
+            const Icon = v.icon;
+            return (
+              <div key={v.title} className={styles.valueItem}>
+                <Icon className={styles.valueIcon} size={28} strokeWidth={1.5} />
+                <div className={styles.valueTitle}>{v.title}</div>
+                <div className={styles.valueDesc}>{v.desc}</div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

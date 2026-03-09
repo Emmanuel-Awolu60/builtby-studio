@@ -46,7 +46,7 @@
 }
 
 .valueIcon {
-  font-size: 1.4rem;
+  color: var(--blue);
   margin-bottom: 0.6rem;
 }
 

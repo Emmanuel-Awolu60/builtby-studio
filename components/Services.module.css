@@ -59,7 +59,7 @@
 }
 
 .cardIcon {
-  font-size: 1.75rem;
+  color: var(--blue-light);
   margin-bottom: 1rem;
   display: block;
 }

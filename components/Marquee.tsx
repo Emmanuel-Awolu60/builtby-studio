@@ -1,14 +1,15 @@
-import styles from './Marquee.module.css';
+import styles from "./Marquee.module.css";
 
 const items = [
-  'Website Design',
-  'E-Commerce',
-  'Brand Identity',
-  'SEO Strategy',
-  'Landing Pages',
-  'Digital Presence',
-  'Web Development',
-  'UI / UX Design',
+  "Website Design",
+  "E-Commerce",
+  "Brand Identity",
+  "SEO Strategy",
+  "Landing Pages",
+  "Digital Presence",
+  "Web Development",
+  "UI / UX Design",
+  "Graphic Design",
 ];
 
 export default function Marquee() {

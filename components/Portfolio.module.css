@@ -37,6 +37,12 @@
   justify-content: center;
   position: relative;
   overflow: hidden;
+  background: var(--ink);
+}
+
+.projectImg {
+  object-fit: cover;
+  z-index: 0;
 }
 
 .tall .imgWrapper {
@@ -55,12 +61,13 @@
     rgba(37, 99, 235, 0.04) 20px,
     rgba(37, 99, 235, 0.04) 21px
   );
+  z-index: 1;
 }
 
 .cardIcon {
-  font-size: 2.5rem;
+  color: var(--blue-light);
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .meta {
@@ -90,6 +97,21 @@
   font-size: 1rem;
   font-weight: 700;
   color: var(--white);
+  margin-bottom: 0.75rem;
+}
+
+.viewBtn {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--blue-light);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.viewBtn:hover {
+  color: var(--white);
+  transform: translateX(4px);
 }
 
 .cta {
