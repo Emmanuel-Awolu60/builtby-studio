@@ -1,0 +1,80 @@
+.testimonials {
+  background: var(--ink);
+  padding: 7rem 4rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
+  padding: 2rem;
+  transition: all 0.25s;
+}
+
+.card:hover {
+  border-color: rgba(37, 99, 235, 0.25);
+  transform: translateY(-3px);
+}
+
+.stars {
+  color: #F59E0B;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.quote {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.75;
+  font-style: italic;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--blue), var(--glow));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 0.8rem;
+  flex-shrink: 0;
+}
+
+.name {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.role {
+  font-size: 0.73rem;
+  color: var(--muted);
+}
+
+@media (max-width: 900px) {
+  .testimonials {
+    padding: 5rem 1.5rem;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,32 @@
+.strip {
+  background: var(--blue);
+  padding: 0.875rem 0;
+  overflow: hidden;
+  display: flex;
+}
+
+.track {
+  display: flex;
+  gap: 2rem;
+  white-space: nowrap;
+  animation: marquee 22s linear infinite;
+}
+
+.item {
+  font-family: 'Syne', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.9;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.item::after {
+  content: '✦';
+  font-size: 0.5rem;
+  opacity: 0.5;
+}
