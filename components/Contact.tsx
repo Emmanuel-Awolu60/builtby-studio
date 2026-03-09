@@ -1,21 +1,29 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
-import { useReveal } from '@/hooks/useReveal';
-import styles from './Contact.module.css';
+import { useState } from "react";
+import { useReveal } from "@/hooks/useReveal";
+import styles from "./Contact.module.css";
 
 const contactDetails = [
-  { icon: '✉️', label: 'Email Us', value: 'hello@builtbystudio.com' },
-  { icon: '📞', label: 'Call Us', value: '+1 (555) 000-0000' },
-  { icon: '🌍', label: 'Working With Clients', value: 'Worldwide — Remote-First Agency' },
-  { icon: '🕐', label: 'Response Time', value: 'Within 24 hours, Monday – Friday' },
+  { icon: "✉️", label: "Email Us", value: "hello@builtbystudio.com" },
+  { icon: "📞", label: "Call Us", value: "+234 901 435 4484" },
+  {
+    icon: "🌍",
+    label: "Working With Clients",
+    value: "Worldwide — Remote-First Agency",
+  },
+  {
+    icon: "🕐",
+    label: "Response Time",
+    value: "Within 24 hours, Monday – Friday",
+  },
 ];
 
 const serviceOptions = [
-  'Website Design & Development',
-  'E-Commerce Store',
-  'Landing Page & Branding',
-  'Full Digital Presence',
+  "Website Design & Development",
+  "E-Commerce Store",
+  "Landing Page & Branding",
+  "Full Digital Presence",
   "Not Sure — Let's Talk",
 ];
 
@@ -24,18 +32,20 @@ export default function Contact() {
   const formRef = useReveal();
 
   const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    company: '',
-    service: '',
-    message: '',
+    firstName: "",
+    lastName: "",
+    email: "",
+    company: "",
+    service: "",
+    message: "",
   });
 
   const [submitted, setSubmitted] = useState(false);
 
   const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >,
   ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
@@ -43,7 +53,7 @@ export default function Contact() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // TODO: Wire up to your email service (Resend, SendGrid, etc.)
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
     setSubmitted(true);
   };
 
@@ -51,14 +61,16 @@ export default function Contact() {
     <section id="contact" className={styles.contact}>
       <div className="section-label">Get In Touch</div>
       <h2 className="section-title">
-        Ready to build something<br />remarkable?
+        Ready to build something
+        <br />
+        remarkable?
       </h2>
 
       <div className={styles.wrap}>
         <div className={`${styles.info} reveal`} ref={infoRef}>
           <p>
-            Tell us about your project and we&apos;ll get back to you within 24 hours
-            with ideas, timeline, and next steps. No commitment required.
+            Tell us about your project and we&apos;ll get back to you within 24
+            hours with ideas, timeline, and next steps. No commitment required.
           </p>
           {contactDetails.map((d) => (
             <div key={d.label} className={styles.detail}>
@@ -76,7 +88,10 @@ export default function Contact() {
             <div className={styles.success}>
               <span>✅</span>
               <h3>Message Sent!</h3>
-              <p>Thanks for reaching out. We&apos;ll get back to you within 24 hours.</p>
+              <p>
+                Thanks for reaching out. We&apos;ll get back to you within 24
+                hours.
+              </p>
             </div>
           ) : (
             <form className={styles.form} onSubmit={handleSubmit}>
@@ -140,9 +155,13 @@ export default function Contact() {
                   value={formData.service}
                   onChange={handleChange}
                 >
-                  <option value="" disabled>Select a service...</option>
+                  <option value="" disabled>
+                    Select a service...
+                  </option>
                   {serviceOptions.map((opt) => (
-                    <option key={opt} value={opt}>{opt}</option>
+                    <option key={opt} value={opt}>
+                      {opt}
+                    </option>
                   ))}
                 </select>
               </div>
@@ -159,7 +178,16 @@ export default function Contact() {
                 />
               </div>
 
-              <button type="submit" className="btn-primary" style={{ width: '100%', justifyContent: 'center', fontSize: '0.95rem', padding: '1rem' }}>
+              <button
+                type="submit"
+                className="btn-primary"
+                style={{
+                  width: "100%",
+                  justifyContent: "center",
+                  fontSize: "0.95rem",
+                  padding: "1rem",
+                }}
+              >
                 Send Message — Let&apos;s Build Something →
               </button>
             </form>

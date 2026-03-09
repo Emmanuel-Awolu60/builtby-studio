@@ -10,6 +10,7 @@
   gap: 2rem;
   white-space: nowrap;
   animation: marquee 22s linear infinite;
+  width: max-content;
 }
 
 .item {
@@ -29,4 +30,16 @@
   content: '✦';
   font-size: 0.5rem;
   opacity: 0.5;
+}
+
+/* THIS PART WAS MISSING */
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
