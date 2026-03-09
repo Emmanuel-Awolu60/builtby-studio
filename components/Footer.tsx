@@ -1,27 +1,27 @@
-import Link from 'next/link';
-import styles from './Footer.module.css';
+import Link from "next/link";
+import styles from "./Footer.module.css";
 
 const serviceLinks = [
-  'Website Design',
-  'E-Commerce Stores',
-  'Landing Pages',
-  'Full Digital Presence',
-  'Brand Identity',
+  "Website Design",
+  "E-Commerce Stores",
+  "Landing Pages",
+  "Full Digital Presence",
+  "Brand Identity",
 ];
 
 const companyLinks = [
-  { href: '#about', label: 'About Us' },
-  { href: '#portfolio', label: 'Our Work' },
-  { href: '#process', label: 'Our Process' },
-  { href: '#pricing', label: 'Pricing' },
-  { href: '#contact', label: 'Contact' },
+  { href: "#about", label: "About Us" },
+  { href: "#portfolio", label: "Our Work" },
+  { href: "#process", label: "Our Process" },
+  { href: "#pricing", label: "Pricing" },
+  { href: "#contact", label: "Contact" },
 ];
 
 const socialLinks = [
-  { href: '#', label: 'in', title: 'LinkedIn' },
-  { href: '#', label: 'ig', title: 'Instagram' },
-  { href: '#', label: '𝕏', title: 'Twitter / X' },
-  { href: '#', label: 'be', title: 'Behance' },
+  { href: "#", label: "in", title: "LinkedIn" },
+  { href: "#", label: "ig", title: "Instagram" },
+  { href: "#", label: "𝕏", title: "Twitter / X" },
+  { href: "#", label: "be", title: "Behance" },
 ];
 
 export default function Footer() {
@@ -63,11 +63,23 @@ export default function Footer() {
         <div>
           <div className={styles.colTitle}>Connect</div>
           <ul className={styles.links}>
-            <li><a href="#">LinkedIn</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Twitter / X</a></li>
-            <li><a href="#">Behance</a></li>
-            <li><a href="mailto:hello@builtbystudio.com">hello@builtbystudio.com</a></li>
+            <li>
+              <a href="#">LinkedIn</a>
+            </li>
+            <li>
+              <a href="#">Instagram</a>
+            </li>
+            <li>
+              <a href="#">Twitter / X</a>
+            </li>
+            <li>
+              <a href="#">Behance</a>
+            </li>
+            <li>
+              <a href="mailto:hello@builtbystudio.com">
+                builtbystudio@gmail.com
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -78,7 +90,12 @@ export default function Footer() {
         </span>
         <div className={styles.socials}>
           {socialLinks.map((s) => (
-            <a key={s.title} href={s.href} className={styles.socialBtn} title={s.title}>
+            <a
+              key={s.title}
+              href={s.href}
+              className={styles.socialBtn}
+              title={s.title}
+            >
               {s.label}
             </a>
           ))}

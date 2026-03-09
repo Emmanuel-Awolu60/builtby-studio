@@ -6,7 +6,7 @@ import styles from "./Contact.module.css";
 import { Mail, Phone, Globe, Clock, CheckCircle } from "lucide-react";
 
 const contactDetails = [
-  { icon: Mail, label: "Email Us", value: "hello@builtbystudio.com" },
+  { icon: Mail, label: "Email Us", value: "builtbystudio@gmail.com" },
   { icon: Phone, label: "Call Us", value: "+234 901 435 4484" },
   {
     icon: Globe,
@@ -77,7 +77,11 @@ export default function Contact() {
             const Icon = d.icon;
             return (
               <div key={d.label} className={styles.detail}>
-                <Icon className={styles.detailIcon} size={24} strokeWidth={1.5} />
+                <Icon
+                  className={styles.detailIcon}
+                  size={24}
+                  strokeWidth={1.5}
+                />
                 <div>
                   <strong>{d.label}</strong>
                   <span>{d.value}</span>
@@ -90,7 +94,11 @@ export default function Contact() {
         <div className={`${styles.formWrap} reveal`} ref={formRef}>
           {submitted ? (
             <div className={styles.success}>
-              <CheckCircle className={styles.successIcon} size={48} strokeWidth={1.5} />
+              <CheckCircle
+                className={styles.successIcon}
+                size={48}
+                strokeWidth={1.5}
+              />
               <h3>Message Sent!</h3>
               <p>
                 Thanks for reaching out. We&apos;ll get back to you within 24
