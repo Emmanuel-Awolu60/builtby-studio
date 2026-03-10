@@ -18,7 +18,7 @@ export const projects: Project[] = [
   {
     id: 1,
     category: "E-Commerce · Retail",
-    title: "Lumiere Botanicals — E-Commerce Platform",
+    title: "Lumiere Botanicals - E-Commerce Platform",
     icon: "Store",
     iconComponent: Store,
     image: "/projects/hero1.png",
@@ -29,7 +29,7 @@ export const projects: Project[] = [
   {
     id: 2,
     category: "Real Estate",
-    title: "Nexusestate",
+    title: "Nexusestate - Modern real estate solution",
     icon: "Store",
     iconComponent: Store,
     image: "/projects/nexusestate.png",
