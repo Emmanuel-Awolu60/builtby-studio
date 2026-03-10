@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import styles from './Hero.module.css';
 
 const stats = [
@@ -8,6 +11,29 @@ const stats = [
 ];
 
 export default function Hero() {
+  const [counts, setCounts] = useState([0, 0, 0, 0]);
+
+  useEffect(() => {
+    const targets = [50, 98, 72, 4];
+    const duration = 2000;
+    const steps = 60;
+    const interval = duration / steps;
+
+    let currentStep = 0;
+    const timer = setInterval(() => {
+      currentStep++;
+      const progress = currentStep / steps;
+      
+      setCounts(targets.map(target => Math.min(Math.floor(target * progress), target)));
+
+      if (currentStep >= steps) {
+        clearInterval(timer);
+        setCounts(targets);
+      }
+    }, interval);
+
+    return () => clearInterval(timer);
+  }, []);
   return (
     <section id="hero" className={styles.hero}>
       <div className={styles.gridBg} />
@@ -33,10 +59,10 @@ export default function Hero() {
         </div>
 
         <div className={styles.stats}>
-          {stats.map((stat) => (
+          {stats.map((stat, index) => (
             <div key={stat.label} className={styles.stat}>
               <div className={styles.statNum}>
-                {stat.num}<span>{stat.suffix}</span>
+                {counts[index]}<span>{stat.suffix}</span>
               </div>
               <div className={styles.statLabel}>{stat.label}</div>
             </div>

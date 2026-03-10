@@ -1,5 +1,28 @@
 import Link from "next/link";
 import styles from "./Footer.module.css";
+import { Linkedin, Instagram, Twitter } from "lucide-react";
+
+// TikTok icon component (Lucide doesn't have TikTok, so we create a custom SVG)
+const TikTokIcon = ({
+  size = 18,
+  strokeWidth = 1.5,
+}: {
+  size?: number;
+  strokeWidth?: number;
+}) => (
+  <svg
+    width={size}
+    height={size}
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth={strokeWidth}
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+  </svg>
+);
 
 const serviceLinks = [
   "Website Design",
@@ -18,10 +41,22 @@ const companyLinks = [
 ];
 
 const socialLinks = [
-  { href: "#", label: "in", title: "LinkedIn" },
-  { href: "#", label: "ig", title: "Instagram" },
-  { href: "#", label: "𝕏", title: "Twitter / X" },
-  { href: "#", label: "be", title: "Behance" },
+  {
+    href: "https://www.linkedin.com/company/builtby-studio/",
+    icon: Linkedin,
+    title: "LinkedIn",
+  },
+  {
+    href: "https://www.instagram.com/builtby.studio?igsh=b2NkandrY25sc2x6",
+    icon: Instagram,
+    title: "Instagram",
+  },
+  { href: "https://x.com/builtbystudio", icon: Twitter, title: "Twitter / X" },
+  {
+    href: "https://www.tiktok.com/@builtby.studio?_r=1&_t=ZN-94ZJ1xfyrsU",
+    icon: TikTokIcon,
+    title: "TikTok",
+  },
 ];
 
 export default function Footer() {
@@ -72,7 +107,10 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" target="_blank">
+              <a
+                href="https://www.instagram.com/builtby.studio?igsh=b2NkandrY25sc2x6"
+                target="_blank"
+              >
                 Instagram
               </a>
             </li>
@@ -82,8 +120,11 @@ export default function Footer() {
               </a>
             </li>
             <li>
-              <a href="#" target="_blank">
-                Behance
+              <a
+                href="https://www.tiktok.com/@builtby.studio?_r=1&_t=ZN-94ZJ1xfyrsU"
+                target="_blank"
+              >
+                TikTok
               </a>
             </li>
             <li>
@@ -100,16 +141,21 @@ export default function Footer() {
           © {new Date().getFullYear()} BuiltBy Studio. All rights reserved.
         </span>
         <div className={styles.socials}>
-          {socialLinks.map((s) => (
-            <a
-              key={s.title}
-              href={s.href}
-              className={styles.socialBtn}
-              title={s.title}
-            >
-              {s.label}
-            </a>
-          ))}
+          {socialLinks.map((s) => {
+            const Icon = s.icon;
+            return (
+              <a
+                key={s.title}
+                href={s.href}
+                className={styles.socialBtn}
+                title={s.title}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Icon size={18} strokeWidth={1.5} />
+              </a>
+            );
+          })}
         </div>
       </div>
     </footer>

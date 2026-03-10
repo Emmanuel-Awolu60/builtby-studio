@@ -26,6 +26,16 @@
   height: 700px;
   background: radial-gradient(ellipse, rgba(37, 99, 235, 0.2) 0%, transparent 65%);
   pointer-events: none;
+  animation: floatGlow 8s ease-in-out infinite;
+}
+
+@keyframes floatGlow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-20px, 20px) scale(1.05);
+  }
 }
 
 .glow2 {
