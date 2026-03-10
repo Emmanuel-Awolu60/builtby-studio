@@ -6,12 +6,22 @@ import styles from "./Contact.module.css";
 import { Mail, Phone, Globe, Clock, CheckCircle } from "lucide-react";
 
 const contactDetails = [
-  { icon: Mail, label: "Email Us", value: "builtbystudio@gmail.com", link: "mailto:builtbystudio@gmail.com" },
-  { icon: Phone, label: "Call Us", value: "+234 901 435 4484", link: "tel:+2349014354484" },
+  {
+    icon: Mail,
+    label: "Email Us",
+    value: "builtbystudio@gmail.com",
+    link: "mailto:builtbystudio@gmail.com",
+  },
+  {
+    icon: Phone,
+    label: "Call Us",
+    value: "+234 901 435 4484",
+    link: "tel:+2349014354484",
+  },
   {
     icon: Globe,
     label: "Working With Clients",
-    value: "Worldwide — Remote-First Agency",
+    value: "Worldwide - Remote-First Agency",
   },
   {
     icon: Clock,
@@ -239,7 +249,7 @@ export default function Contact() {
                   padding: "1rem",
                 }}
               >
-                Send Message — Let&apos;s Build Something →
+                Send Message - Let&apos;s Build Something →
               </button>
             </form>
           )}
