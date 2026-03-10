@@ -26,6 +26,17 @@ export const projects: Project[] = [
     url: "https://lumiere-botanicals.pxxl.click/",
     description: "A complete e-commerce solution with cart, checkout, and inventory management"
   },
+  {
+    id: 2,
+    category: "Real Estate",
+    title: "Nexusestate",
+    icon: "Store",
+    iconComponent: Store,
+    image: "/projects/nexusestate.png",
+    tall: true,
+    url: "https://nexusestate.vercel.app/",
+    description: "A modern real estate solution that makes property listing, discovery, and client connection seamless."
+  },
   // Add more projects here as they become available
   // {
   //   id: 2,
