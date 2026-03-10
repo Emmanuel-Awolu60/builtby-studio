@@ -7,7 +7,7 @@ const plans = [
   {
     tier: "Starter",
     name: "Launch",
-    price: "$800 - $1,500",
+    price: "$800",
     priceNote: "/project",
     desc: "Perfect for small and local businesses getting online for the first time.",
     features: [
@@ -24,7 +24,7 @@ const plans = [
   {
     tier: "Growth",
     name: "Business",
-    price: "$2,499",
+    price: "$1,500",
     priceNote: "/project",
     desc: "For growing businesses that need a powerful, full-featured web presence.",
     features: [
