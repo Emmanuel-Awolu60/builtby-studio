@@ -6,8 +6,7 @@
 
 .grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 3.5rem;
 }
@@ -25,10 +24,6 @@
   transform: translateY(-4px);
 }
 
-.tall {
-  grid-row: span 2;
-}
-
 .imgWrapper {
   width: 100%;
   aspect-ratio: 16 / 10;
@@ -43,12 +38,6 @@
 .projectImg {
   object-fit: cover;
   z-index: 0;
-}
-
-.tall .imgWrapper {
-  aspect-ratio: auto;
-  height: 100%;
-  min-height: 340px;
 }
 
 .imgOverlay {
@@ -74,15 +63,6 @@
   padding: 1.25rem 1.5rem;
   position: relative;
   z-index: 5;
-}
-
-.tall .meta {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: linear-gradient(transparent, rgba(11, 15, 26, 0.95));
-  padding: 2.5rem 1.75rem 1.5rem;
 }
 
 .category {
@@ -129,11 +109,5 @@
   }
   .grid {
     grid-template-columns: 1fr;
-  }
-  .tall {
-    grid-row: span 1;
-  }
-  .tall .imgWrapper {
-    min-height: 200px;
   }
 }
