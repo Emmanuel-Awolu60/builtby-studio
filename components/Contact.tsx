@@ -51,11 +51,29 @@ export default function Contact() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  /* THIS IS THE ONLY FUNCTION THAT CHANGED */
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: Wire up to your email service (Resend, SendGrid, etc.)
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setSubmitted(true);
+      } else {
+        console.error("Email failed:", data.error);
+      }
+    } catch (error) {
+      console.error("Submission error:", error);
+    }
   };
 
   return (
@@ -73,8 +91,10 @@ export default function Contact() {
             Tell us about your project and we&apos;ll get back to you within 24
             hours with ideas, timeline, and next steps. No commitment required.
           </p>
+
           {contactDetails.map((d) => {
             const Icon = d.icon;
+
             return (
               <div key={d.label} className={styles.detail}>
                 <Icon
@@ -82,6 +102,7 @@ export default function Contact() {
                   size={24}
                   strokeWidth={1.5}
                 />
+
                 <div>
                   <strong>{d.label}</strong>
                   <span>{d.value}</span>
@@ -99,7 +120,9 @@ export default function Contact() {
                 size={48}
                 strokeWidth={1.5}
               />
+
               <h3>Message Sent!</h3>
+
               <p>
                 Thanks for reaching out. We&apos;ll get back to you within 24
                 hours.
@@ -110,6 +133,7 @@ export default function Contact() {
               <div className={styles.row}>
                 <div className={styles.group}>
                   <label htmlFor="firstName">First Name</label>
+
                   <input
                     id="firstName"
                     name="firstName"
@@ -120,8 +144,10 @@ export default function Contact() {
                     required
                   />
                 </div>
+
                 <div className={styles.group}>
                   <label htmlFor="lastName">Last Name</label>
+
                   <input
                     id="lastName"
                     name="lastName"
@@ -136,6 +162,7 @@ export default function Contact() {
 
               <div className={styles.group}>
                 <label htmlFor="email">Business Email</label>
+
                 <input
                   id="email"
                   name="email"
@@ -149,6 +176,7 @@ export default function Contact() {
 
               <div className={styles.group}>
                 <label htmlFor="company">Company / Business Name</label>
+
                 <input
                   id="company"
                   name="company"
@@ -161,6 +189,7 @@ export default function Contact() {
 
               <div className={styles.group}>
                 <label htmlFor="service">Service Interested In</label>
+
                 <select
                   id="service"
                   name="service"
@@ -170,6 +199,7 @@ export default function Contact() {
                   <option value="" disabled>
                     Select a service...
                   </option>
+
                   {serviceOptions.map((opt) => (
                     <option key={opt} value={opt}>
                       {opt}
@@ -180,6 +210,7 @@ export default function Contact() {
 
               <div className={styles.group}>
                 <label htmlFor="message">Tell Us About Your Project</label>
+
                 <textarea
                   id="message"
                   name="message"

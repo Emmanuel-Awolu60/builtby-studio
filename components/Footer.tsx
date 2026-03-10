@@ -64,19 +64,30 @@ export default function Footer() {
           <div className={styles.colTitle}>Connect</div>
           <ul className={styles.links}>
             <li>
-              <a href="#">LinkedIn</a>
+              <a
+                href="https://www.linkedin.com/company/builtby-studio/"
+                target="_blank"
+              >
+                LinkedIn
+              </a>
             </li>
             <li>
-              <a href="#">Instagram</a>
+              <a href="#" target="_blank">
+                Instagram
+              </a>
             </li>
             <li>
-              <a href="#">Twitter / X</a>
+              <a href="https://x.com/builtbystudio" target="_blank">
+                Twitter / X
+              </a>
             </li>
             <li>
-              <a href="#">Behance</a>
+              <a href="#" target="_blank">
+                Behance
+              </a>
             </li>
             <li>
-              <a href="mailto:hello@builtbystudio.com">
+              <a href="mailto:builtbystudio@gmail.com" target="_blank">
                 builtbystudio@gmail.com
               </a>
             </li>
