@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { Menu, X } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 const navLinks = [
@@ -15,6 +16,18 @@ const navLinks = [
 export default function Navbar() {
   const [active, setActive] = useState('');
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (menuOpen && !target.closest(`.${styles.nav}`) && !target.closest(`.${styles.mobileMenu}`)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    return () => document.removeEventListener('click', handleClickOutside);
+  }, [menuOpen]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,10 +45,15 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
-      <Link href="/" className={styles.logo}>
-        BUILT<span>BY</span> STUDIO
-      </Link>
+    <>
+      <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''}`}>
+        <Link href="/" className={styles.logo}>
+          BUILT<span>BY</span> STUDIO
+        </Link>
+
+        <button onClick={() => setMenuOpen(!menuOpen)} className={styles.menuToggle} aria-label="Toggle menu">
+          {menuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
 
       <ul className={styles.links}>
         {navLinks.map((link) => (
@@ -55,5 +73,22 @@ export default function Navbar() {
         </li>
       </ul>
     </nav>
+
+    <div className={`${styles.mobileMenu} ${menuOpen ? styles.mobileMenuOpen : ''}`}>
+      <ul className={styles.mobileLinks}>
+        {navLinks.map((link) => (
+          <li key={link.href}>
+            <a
+              href={link.href}
+              onClick={() => setMenuOpen(false)}
+              className={styles.mobileLink}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+    </>
   );
 }
