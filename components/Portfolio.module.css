@@ -72,6 +72,8 @@
 
 .meta {
   padding: 1.25rem 1.5rem;
+  position: relative;
+  z-index: 5;
 }
 
 .tall .meta {
@@ -107,6 +109,8 @@
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s, transform 0.3s;
+  position: relative;
+  z-index: 10;
 }
 
 .viewBtn:hover {
