@@ -6,8 +6,8 @@ import styles from "./Contact.module.css";
 import { Mail, Phone, Globe, Clock, CheckCircle } from "lucide-react";
 
 const contactDetails = [
-  { icon: Mail, label: "Email Us", value: "builtbystudio@gmail.com" },
-  { icon: Phone, label: "Call Us", value: "+234 901 435 4484" },
+  { icon: Mail, label: "Email Us", value: "builtbystudio@gmail.com", link: "mailto:builtbystudio@gmail.com" },
+  { icon: Phone, label: "Call Us", value: "+234 901 435 4484", link: "tel:+2349014354484" },
   {
     icon: Globe,
     label: "Working With Clients",
@@ -94,19 +94,27 @@ export default function Contact() {
 
           {contactDetails.map((d) => {
             const Icon = d.icon;
-
-            return (
-              <div key={d.label} className={styles.detail}>
+            const content = (
+              <>
                 <Icon
                   className={styles.detailIcon}
                   size={24}
                   strokeWidth={1.5}
                 />
-
                 <div>
                   <strong>{d.label}</strong>
                   <span>{d.value}</span>
                 </div>
+              </>
+            );
+
+            return d.link ? (
+              <a key={d.label} href={d.link} className={styles.detail}>
+                {content}
+              </a>
+            ) : (
+              <div key={d.label} className={styles.detail}>
+                {content}
               </div>
             );
           })}
