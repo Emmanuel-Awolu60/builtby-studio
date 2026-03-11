@@ -37,6 +37,17 @@ export const projects: Project[] = [
     url: "https://nexusestate.vercel.app/",
     description: "A modern real estate solution that makes property listing, discovery, and client connection seamless."
   },
+  {
+    id: 3,
+    category: "Food Plug",
+    title: "Food Plug - Good food choices are good investments.",
+    icon: "Store",
+    iconComponent: Store,
+    image: "/projects/foodplug.png",
+    tall: true,
+    url: "https://dx1-foodplug.netlify.app/",
+    description: "."
+  },
   // Add more projects here as they become available
   // {
   //   id: 2,
