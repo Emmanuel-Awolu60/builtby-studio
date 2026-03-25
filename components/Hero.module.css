@@ -50,8 +50,7 @@
 
 .content {
   position: relative;
-  /* max-width: 800px; */
-  animation: fadeUp 0.9s ease both;
+  /* animation removed from wrapper to stagger children */
 }
 
 .label {
@@ -64,6 +63,7 @@
   text-transform: uppercase;
   color: var(--blue-light);
   margin-bottom: 1.75rem;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .label::before {
@@ -80,6 +80,7 @@
   line-height: 1.04;
   letter-spacing: -0.025em;
   margin-bottom: 1.5rem;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
 .heading em {
@@ -95,6 +96,7 @@
   max-width: 520px;
   margin-bottom: 2.5rem;
   line-height: 1.7;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s both;
 }
 
 .actions {
@@ -102,6 +104,7 @@
   gap: 1rem;
   align-items: center;
   flex-wrap: wrap;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
 }
 
 .stats {
@@ -110,11 +113,10 @@
   margin-top: 4rem;
   padding-top: 3rem;
   border-top: 1px solid var(--line);
-  animation: fadeUp 0.9s 0.2s ease both;
+  animation: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both;
   flex-wrap: wrap;
 }
 
-.stat {}
 
 .statNum {
   font-family: 'Syne', sans-serif;

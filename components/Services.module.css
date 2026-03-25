@@ -14,19 +14,19 @@
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1.5px;
-  background: var(--line);
-  border: 1px solid var(--line);
-  border-radius: 12px;
-  overflow: hidden;
+  gap: 1.5rem;
 }
 
 .card {
-  background: #0D1117;
+  background: rgba(11, 15, 26, 0.4);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   padding: 2.25rem 2rem;
-  transition: all 0.3s;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .card::before {
@@ -36,9 +36,10 @@
   left: 0;
   right: 0;
   height: 2px;
-  background: var(--blue);
+  background: linear-gradient(90deg, var(--glow), var(--blue-light));
   transform: scaleX(0);
-  transition: transform 0.3s;
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .card:hover::before {
@@ -46,7 +47,10 @@
 }
 
 .card:hover {
-  background: #111827;
+  background: rgba(14, 20, 34, 0.6);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 .cardNum {
