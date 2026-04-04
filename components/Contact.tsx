@@ -16,7 +16,7 @@ const contactDetails = [
     icon: Phone,
     label: "Call Us",
     value: "+234 901 435 4484",
-    link: "tel:+2349014354484",
+    link: "tel:+234 901 435 4484",
   },
   {
     icon: Globe,

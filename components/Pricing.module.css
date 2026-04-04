@@ -213,6 +213,9 @@
   display: flex;
   align-items: flex-start;
   gap: 0.15rem;
+  flex-wrap: wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .price sup.currencySymbol {
@@ -354,5 +357,11 @@
   }
   .featured:hover .cardInner {
     transform: scale(1);
+  }
+  .price {
+    font-size: 2rem;
+  }
+  .cardInner {
+    padding: 2rem 1.5rem;
   }
 }
